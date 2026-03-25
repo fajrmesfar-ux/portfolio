@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculateur de Calories</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<nav>
+<h1>Equilibra</h1>
+<ul>
+<li><a href="acceuil.html">Accueil</a></li>
+<li><a href="a propos.html">À propos</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+</header>
+<section class="calc1">
+    <h2>Calculateur de Calories</h2>
+    </br>
+    <p>Choisissez un aliment, ajoutez-le et obtenez le total des calories.</p>
+</br>
+</br>
+    <div class="calc2">
+        <select id="foodSelect">
+            <option value="">Choisir un aliment :</option>
+        </select>
+        <input type="number" id="quantity" placeholder="Quantité (en grammes)">
+        <button class="btn" onclick="addFood()">Ajouter</button>
+        <button class="btn" onclick="resetMeal()">Réinitialiser</button>
+    </div>
+    <h3>Votre repas :</h3>
+    <ul id="mealList"></ul>
+    <div id="result">
+        Total calories : <span id="totalCalories">0</span> kcal
+    </div>
+</section>
+<footer id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Equilibra</h3>
+                <p>Votre partenaire de confiance pour une alimentation équilibrée et un mode de vie sain. Nous croyons que manger sainement devrait être accessible, agréable et facile pour tous.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="acceuil.html">Accueil</a></li>
+                    <li><a href="a propos.html">À propos de nous</a></li>
+                    <li><a href="calculateur.html">Calculateur de repas</a></li>
+                    <li><a href="mood.html">Repas selon humeur</a></li>
+                    <li><a href="budget.html">Mode étudiant</a></li>
+                    <li><a href="chrono.html">ChronoFit</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Restez connecté</h3>
+                <p><strong>Email :</strong> contact@equilibra.tn</p>
+                <p><strong>Téléphone :</strong> +216 55 555 555</p>
+                <p><strong>Adresse :</strong> Sfax, Tunisie</p>
+                <p style="margin-top: 1.5rem;"><strong>Newsletter</strong></p>
+                <p>Recevez nos meilleurs conseils nutrition chaque semaine</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Merci pour votre inscription !');">
+                    <input type="email" placeholder="Votre email" required>
+                    <button type="submit">S'inscrire</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Equilibra. Tous droits réservés. Fait avec ❤️ en Tunisie</p>
+        </div>
+    </footer>
+    <button  id="scrollToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+    <script>
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            const scrollToTop = document.getElementById('scrollToTop');
+            
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+                scrollToTop.classList.add('visible');
+            } else {
+                header.classList.remove('scrolled');
+                scrollToTop.classList.remove('visible');
+            }
+        });
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        document.querySelectorAll('.card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+const foods = [
+    { name: "Salade verte", calories: 15 },
+    { name: "Salade Méchouia", calories: 95 },
+    { name: "Orange", calories: 47 },
+    { name: "Pomme", calories: 52 },
+    { name: "Banane", calories: 89 },
+    { name: "Pastèque", calories: 30 },
+    { name: "Raisin blanc", calories: 69 },
+    { name: "Grenade", calories: 83 },
+    { name: "Dattes", calories: 23 },
+    { name: "Merguez", calories: 80 },
+    { name: "Œuf", calories: 155 },
+    { name: "Thon", calories: 116 },
+    { name: "Yaourt nature", calories: 61 },
+    { name: "couscous", calories: 120 },
+    { name: "Poulet grillé", calories: 165 },
+    { name: "Poisson grillé", calories: 120 },
+    { name: "Riz cuit", calories: 130 },
+    { name: "Pain Tabouna", calories: 131 },
+    { name: "Pain complet", calories: 69 },
+    { name: "Mloukhia", calories: 120 },
+    { name: "Chorba orge", calories: 60 },
+    { name: "Lablabi", calories: 95 },
+    { name: "Ojja", calories: 90 }
+];
+const select = document.getElementById("foodSelect");
+foods.forEach(f => {
+    const option = document.createElement("option");
+    option.value = f.name;
+    option.textContent = `${f.name} (${f.calories} kcal /100g)`;
+    select.appendChild(option);
+});
+let total = 0;
+function addFood() {
+    const foodName = select.value;
+    const quantity = parseInt(document.getElementById("quantity").value);
+    if (!foodName || !quantity) {
+        alert("Veuillez sélectionner un aliment et entrer une quantité.");
+        return;
+    }
+    const food = foods.find(f => f.name === foodName);
+    const calories = (food.calories * quantity) / 100;
+    total += calories;
+    const li = document.createElement("li");
+    li.textContent = `${foodName} - ${quantity} g → ${calories.toFixed(1)} kcal`;
+    document.getElementById("mealList").appendChild(li);
+    document.getElementById("totalCalories").textContent = total.toFixed(1);
+    document.getElementById("quantity").value = "";
+}
+function resetMeal() {
+    total = 0;
+    document.getElementById("mealList").innerHTML = "";
+    document.getElementById("totalCalories").textContent = "0";
+    document.getElementById("quantity").value = "";
+}
+</script>
+</body>
+</html>

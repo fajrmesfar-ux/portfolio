@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<repas>
+    <item>
+        <nom>Lablabi léger</nom>
+        <prix>2.5</prix>
+        <desc>Lablabi avec pois chiches, cumin, ail, citron, peu d’huile et sans œuf frit.</desc>
+    </item>
+
+    <item>
+        <nom>Sandwich omelette au pain complet</nom>
+        <prix>3</prix>
+        <desc>Omelette cuite sans excès d’huile, pain complet et ajout de salade.</desc>
+    </item>
+
+    <item>
+        <nom>Salade Méchouia + pain complet</nom>
+        <prix>3</prix>
+        <desc>Légumes grillés, peu d’huile d’olive et pain complet.</desc>
+    </item>
+
+    <item>
+        <nom>Mlewi léger</nom>
+        <prix>4</prix>
+        <desc>Mlewi avec moins de gras, garni de thon ou œuf et légumes.</desc>
+    </item>
+
+    <item>
+        <nom>Chapati au thon healthy</nom>
+        <prix>4.5</prix>
+        <desc>Thon égoutté, salade, tomate et sauce légère au yaourt.</desc>
+    </item>
+
+    <item>
+        <nom>Pâtes sauce tomate maison</nom>
+        <prix>5</prix>
+        <desc>Pâtes avec sauce tomate naturelle, peu de sel et légumes ajoutés.</desc>
+    </item>
+
+    <item>
+        <nom>Omelette + grande salade</nom>
+        <prix>5.5</prix>
+        <desc>Omelette simple accompagnée d’une salade fraîche et variée.</desc>
+    </item>
+
+    <item>
+        <nom>Riz complet + légumes</nom>
+        <prix>6.5</prix>
+        <desc>Riz complet riche en fibres avec légumes sautés légèrement.</desc>
+    </item>
+
+    <item>
+        <nom>Couscous légumes léger</nom>
+        <prix>7</prix>
+        <desc>Couscous aux légumes sans excès de gras, semoule complète.</desc>
+    </item>
+</repas>

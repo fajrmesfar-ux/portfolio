@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>ChronoFit – Quand manger quoi ?</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <nav>
+        <h1>Equilibra</h1>
+        <ul>
+            <li><a href="acceuil.html">Accueil</a></li>
+            <li><a href="a propos.html">À propos</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+<section class="chronoo">
+    <h2>ChronoFit</h2>
+    <p>Optimisez votre énergie en mangeant les bons aliments au bon moment.</p>
+    <button class="btn chrono-btn" onclick="chargerMoments()">Voir recommandations</button>
+</section>
+<section class="chrono1">
+    <h3 class="chrono-title">⏰ Moments de la journée</h3>
+    <div id="chronoResult" class="chrono-grid">
+    </div>
+</section>
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;">
+    <div style="background: linear-gradient(135deg, var(--primary-green), var(--primary-green-dark)); 
+        color: white; 
+        padding: 3rem; 
+        border-radius: 16px; 
+        margin: 3rem 0; 
+        box-shadow: 0 8px 30px rgba(93, 176, 117, 0.3);">
+        <h3 style="color: #F4A261; text-align: center; font-size: 2em; margin-bottom: 2rem;">
+            ✨ Les Bénéfices de la ChronoFit
+        </h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+            <div style="text-align: center;">
+                <p style="font-size: 2.5rem; margin: 0;">⚡</p>
+                <h4 style="margin: 1rem 0 0.5rem;">Énergie optimale</h4>
+                <p style="opacity: 0.9;">Maintenez votre énergie stable toute la journée</p>
+            </div>
+            <div style="text-align: center;">
+                <p style="font-size: 2.5rem; margin: 0;">🎯</p>
+                <h4 style="margin: 1rem 0 0.5rem;">Digestion facilitée</h4>
+                <p style="opacity: 0.9;">Réduisez les troubles digestifs</p>
+            </div>
+            <div style="text-align: center;">
+                <p style="font-size: 2.5rem; margin: 0;">📊</p>
+                <h4 style="margin: 1rem 0 0.5rem;">Gestion du poids</h4>
+                <p style="opacity: 0.9;">Optimisez votre métabolisme naturellement</p>
+            </div>
+        </div>
+    </div>
+    <div style="background: #FFF9F0; 
+        padding: 2.5rem; 
+        border-radius: 16px; 
+        margin: 2rem 0; 
+        border-left: 5px solid #F4A261;">
+        <h3 style="color: #E76F51; margin-bottom: 1.5rem;">💡 Conseils Pratiques</h3>
+        <div style="display: grid; gap: 1rem;">
+            <div style="background: white; padding: 1.2rem; border-radius: 12px;">
+                <strong style="color: var(--primary-green);">⏰ Mangez à heures régulières</strong>
+                <p style="color: #666;">Établissez une routine pour synchroniser votre horloge biologique</p>
+            </div>
+            <div style="background: white; padding: 1.2rem; border-radius: 12px;">
+                <strong style="color: var(--primary-green);">🍽️ Ne sautez pas le petit-déjeuner</strong>
+                <p style="color: #666;">Il active votre métabolisme et vous donne de l'énergie pour la journée</p>
+            </div>
+            <div style="background: white; padding: 1.2rem; border-radius: 12px;">
+                <strong style="color: var(--primary-green);">🌙 Dînez tôt (2-3h avant le coucher)</strong>
+                <p style="color: #666;">Laissez le temps à votre corps de digérer avant de dormir</p>
+            </div>
+            <div style="background: white; padding: 1.2rem; border-radius: 12px;">
+                <strong style="color: var(--primary-green);">💧 Hydratez-vous régulièrement</strong>
+                <p style="color: #666;">Buvez de l'eau tout au long de la journée</p>
+            </div>
+        </div>
+    </div>
+</div>
+ <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Equilibra</h3>
+                <p>Votre partenaire de confiance pour une alimentation équilibrée et un mode de vie sain. Nous croyons que manger sainement devrait être accessible, agréable et facile pour tous.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="acceuil.html">Accueil</a></li>
+                    <li><a href="a propos.html">À propos de nous</a></li>
+                    <li><a href="calculateur.html">Calculateur de repas</a></li>
+                    <li><a href="mood.html">Repas selon humeur</a></li>
+                    <li><a href="budget.html">Mode étudiant</a></li>
+                    <li><a href="chrono.html">ChronoFit</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Restez connecté</h3>
+                <p><strong>Email :</strong> contact@equilibra.tn</p>
+                <p><strong>Téléphone :</strong> +216 55 555 555</p>
+                <p><strong>Adresse :</strong> Sfax, Tunisie</p>
+                <p style="margin-top: 1.5rem;"><strong>Newsletter</strong></p>
+                <p>Recevez nos meilleurs conseils nutrition chaque semaine</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Merci pour votre inscription !');">
+                    <input type="email" placeholder="Votre email" required>
+                    <button type="submit">S'inscrire</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Equilibra. Tous droits réservés. Fait avec ❤️ en Tunisie</p>
+        </div>
+    </footer>
+    <button  id="scrollToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+    <script>
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            const scrollToTop = document.getElementById('scrollToTop');
+            
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+                scrollToTop.classList.add('visible');
+            } else {
+                header.classList.remove('scrolled');
+                scrollToTop.classList.remove('visible');
+            }
+        });
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        document.querySelectorAll('.card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+var chronoData = `
+<moments>
+    <moment>
+        <titre>Matin</titre>
+        <type>Glucides + fibres</type>
+        <texte>Ton cerveau a besoin de carburant, pas d’air.</texte>
+        <details>Avoine, fruits, œufs, pain complet. Idéal pour lancer la machine.</details>
+    </moment>
+    <moment>
+        <titre>Midi</titre>
+        <type>Repas complet équilibré</type>
+        <texte>Le moment où tu peux manger le plus sans remords.</texte>
+        <details>Protéines, légumes, féculents : ton trio gagnant pour l’après-midi.</details>
+    </moment>
+    <moment>
+        <titre>Soir</titre>
+        <type>Léger + digestible</type>
+        <texte>Le soir, ton estomac veut dormir, pas faire du crossfit.</texte>
+        <details>Soupes, légumes, poisson, yaourt… évite les bombes caloriques.</details>
+    </moment>
+</moments>
+`;
+function chargerMoments() {
+    var blob = new Blob([chronoData], { type: "text/xml" });
+    var url = URL.createObjectURL(blob);
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", url, true);
+    xhr.send();
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            afficher(xhr.responseXML);
+        }
+    };
+}
+function afficher(xml) {
+    var list = xml.getElementsByTagName("moment");
+    var output = "";
+    for (var i = 0; i < list.length; i++) {
+        var titre = list[i].getElementsByTagName("titre")[0].textContent;
+        var type = list[i].getElementsByTagName("type")[0].textContent;
+        var texte = list[i].getElementsByTagName("texte")[0].textContent;
+        var details = list[i].getElementsByTagName("details")[0].textContent;
+        output += `
+            <div class="chrono2">
+                <h4>${titre}</h4>
+                <span class="chrono-tag">${type}</span>
+                <p class="chrono3">“${texte}”</p>
+                <p class="chrono-details">${details}</p>
+            </div>
+        `;
+    }
+    document.getElementById("chronoResult").innerHTML = output;
+}
+</script>
+</body>
+</html>
